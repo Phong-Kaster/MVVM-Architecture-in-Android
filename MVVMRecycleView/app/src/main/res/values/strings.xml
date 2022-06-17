@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MVVM RecycleView</string>
+    <string name="model_view_view_model">MODEL - VIEW - VIEW MODEL</string>
+    <string name="create">CREATE</string>
+    <string name="phong_kaster">Phong Kaster</string>
+    <string name="hallo_mein_name_ist_phong">HALLO, MEIN NAME IST PHONG</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+</resources>
