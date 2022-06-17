@@ -18,6 +18,7 @@
   - [**Step 3: Design XML layout for MainActivity**](#step-3-design-xml-layout-for-mainactivity)
   - [**Step 4: Declare PersonViewModel**](#step-4-declare-personviewmodel)
   - [**Step 5: Define functionalities of View in the MainActivity file**](#step-5-define-functionalities-of-view-in-the-mainactivity-file)
+- [**Demo**](#demo)
 - [**My Mentors**](#my-mentors)
 - [**Made with 💘 and Android <img src="https://www.vectorlogo.zone/logos/android/android-tile.svg" width="40px">**](#made-with--and-android-)
 
@@ -195,6 +196,8 @@ To illustrate, pay your attention to the picture below:
             #code what you need
         });
     }
+
+# [**Demo**](#demo)
 
 # [**My Mentors**](#my-mentors)
 
