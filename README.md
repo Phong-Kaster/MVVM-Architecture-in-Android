@@ -12,7 +12,7 @@
 - [**Introduce**](#introduce)
 - [**What is Model-View-View Model ?**](#what-is-model-view-view-model-)
 - [**Directory Structure**](#directory-structure)
-- [**Step-By-Step Implement**](#step-by-step-implement)
+- [**Step-By-Step Implementation**](#step-by-step-implementation)
   - [**Step 1: Create A New Project**](#step-1-create-a-new-project)
   - [**Step 2: Create the Model class**](#step-2-create-the-model-class)
   - [**Step 3: Design XML layout for MainActivity**](#step-3-design-xml-layout-for-mainactivity)
@@ -55,7 +55,7 @@ Model — View — ViewModel (MVVM) is the industry-recognized software architec
 ***There are 3 components in MVVM architectural design***
 </h3>
 
-The separating layer of MVVM are:
+The separating layers of MVVM are:
 
 **MODEL** - The layer takes responsibility for describing objects in a database. For example: There is a student table in our Database so that model has to describe every single property of it
 
@@ -71,6 +71,7 @@ MVVM pattern has some similarities with the MVP(Model — View — Presenter) de
 2. Many to 1 relationship exist between View and ViewModel. A view maybe have more than one ViewModel.
 
 3. No triggering methods to update the View.
+
 
 # [**Directory Structure**](#directory-structure)
 
@@ -88,13 +89,11 @@ The picture shows the project's directory structure in this repository below:
 
 **Model** includes class Person which is describes properties of a Person objects
 
-
-
-**RecycleViewAdapter** is the new component. It contain files which is utilized to build up ViewHolder & logical flows when we want to use RecycleView.
+**RecycleViewAdapter** is the component to create a list of item in screen. It contain files which is utilized to build up ViewHolder & logical flows when we want to use RecycleView.
 
 **ViewModel** consists PersonViewModel where every function used to handle logic lying here.
 
-# [**Step-By-Step Implement**](#directory-structure)
+# [**Step-By-Step Implementation**](#step-by-step-implementation)
 
 ## [**Step 1: Create A New Project**](#step-1-create-a-new-project)
 
@@ -122,6 +121,10 @@ Select the minimum SDK as per your need. I chosen Android 7, for instance.
             #Getter & Setter...
         }
 
+Class `Person` is in charge of ensuring correct format with new person added to database. For instance, a person object only have 3 properties include: id, name, phone. Therefore, we are unable to add a incorrect person object have 4 or more properties.
+
+In addition, class `Person` provides getter & setter to utilize | modify a person object's attribute like id, name, phone,.... as long as the properties is being modifying, belongs to this object.
+
 ## [**Step 3: Design XML layout for MainActivity**](#step-3-design-xml-layout-for-mainactivity)
 
 Open MainActivity
@@ -141,7 +144,7 @@ Press & hold Crl for Window( Command for MacOS) & left-click on `activity_main.x
 XML layout we have maybe look similar as the image: 
 
 <p align="center">
-    <img src="./photo/screen3.png" height="420" />
+    <img src="./photo/screen4.png" height="420" />
 </p>
 <h3 align="center">
 
@@ -161,6 +164,9 @@ In this step you have to write all functions you need to create - modify - eradi
 </h3>
 
 Remember that every requirement to modify data must be declared in ViewModel. We never write code to customize their properties in View(MainActivity, EditActivity).
+
+
+PersonViewModel is the component which we uses to write code to do anything we need with data show in screen. On the contrary, View listens end-user's action & executes function/feature matching with this action.
 
 ## [**Step 5: Define functionalities of View in the MainActivity file**](#step-5-define-functionalities-of-view-in-the-mainactivity-file)
 
