@@ -12,17 +12,21 @@ import android.widget.Button;
 
 import com.example.mvvmrecycleview.Model.Person;
 import com.example.mvvmrecycleview.RecycleViewAdapter.PersonRecycleViewAdapter;
-import com.example.mvvmrecycleview.ViewModel.PersonViewModel;
+import com.example.mvvmrecycleview.ViewModel.MainActivityViewModel;
 
 import java.lang.ref.WeakReference;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-
+/**
+ * ? 2 activities do not use the same viewModel.
+ * Each activity have its own view model.
+ *
+ * ? we have to store data's state. For example, rotating screen could kill activity's life circle
+ * Therefore, storing data's state is a important mission.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private ArrayList<Person> objects = new ArrayList<>();
-    private PersonViewModel viewModel;
+    private MainActivityViewModel viewModel;
 
     private Button buttonCreate;
     private PersonRecycleViewAdapter adapter;
@@ -61,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewModel()
     {
-        viewModel = new ViewModelProvider(this).get(PersonViewModel.class);
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
         viewModel.initialize();
 
@@ -69,12 +73,6 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onChanged(ArrayList<Person> people) {
-
-                if(people.size() < 0)
-                {
-                    viewModel.initialize();
-                }
-
                 setupRecycleView(people);
             }
         });
@@ -109,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("NotifyDataSetChanged")
     public void updatePerson(int position, String name, String phone)
     {
-        adapter.notifyItemChanged(position);
         viewModel.modify(position, name, phone);
     }
 
@@ -119,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
      * */
     public void eradicatePerson(int position)
     {
-        adapter.notifyItemRemoved(position);
         viewModel.eradicate(position);
     }
 }

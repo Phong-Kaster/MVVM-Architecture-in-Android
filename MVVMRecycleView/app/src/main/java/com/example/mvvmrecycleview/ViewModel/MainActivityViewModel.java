@@ -8,7 +8,7 @@ import com.example.mvvmrecycleview.Model.Person;
 
 import java.util.ArrayList;
 
-public class PersonViewModel extends ViewModel {
+public class MainActivityViewModel extends ViewModel {
 
     private MutableLiveData<ArrayList<Person>> objects = new MutableLiveData<>();
     private ArrayList<Person> people = new ArrayList<>();
@@ -29,7 +29,6 @@ public class PersonViewModel extends ViewModel {
     {
         Person person1 = new Person("Phong", "0366253623");
         people.add(person1);
-
         objects.setValue(people);
     }
 
@@ -82,4 +81,5 @@ public class PersonViewModel extends ViewModel {
         people.remove(position);
         objects.setValue(people);
     }
+
 }
