@@ -19,6 +19,7 @@
   - [**Step 4: Declare PersonViewModel**](#step-4-declare-personviewmodel)
   - [**Step 5: Define functionalities of View in the MainActivity file**](#step-5-define-functionalities-of-view-in-the-mainactivity-file)
 - [**Demo**](#demo)
+- [**Advantages & Disadvantages**](#advantages--disadvantages)
 - [**My Mentors**](#my-mentors)
 - [**Made with 💘 and Android <img src="https://www.vectorlogo.zone/logos/android/android-tile.svg" width="40px">**](#made-with--and-android-)
 
@@ -209,7 +210,13 @@ To illustrate, pay your attention to the picture below:
 https://user-images.githubusercontent.com/58034430/174237297-d13d5a13-f021-47a3-aea8-64e6408601fb.mov
 
 
+# [**Advantages & Disadvantages**](#advantages--disadvantages)
 
+| Advantage                                                                 | Disadvantage                                                                             |
+|---------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| Enhance the reusability of code.                                          |                                                                                          |
+| All modules are independent which improves the testability of each layer. | This design pattern is not ideal for small projects.                                     |
+| Makes project files maintainable and easy to make changes.                | If the data binding logic is too complex, the application debug will be a little harder. |
 
 # [**My Mentors**](#my-mentors)
 
